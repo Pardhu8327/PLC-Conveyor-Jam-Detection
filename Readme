@@ -1,0 +1,32 @@
+# PLC-Based Conveyor Jam Detection and Sequencing
+
+## Project Overview
+A PLC-based conveyor control system developed in EDWartens Lab using Ladder Logic. The system models three sequential conveyor belts that transport parcels toward a bagging area, with timed startup, photoelectric jam detection, fault latching, and operator reset.
+
+## Problem Statement
+Conveyor jams can interrupt parcel handling and damage equipment if upstream belts continue feeding a blocked conveyor. The system must detect prolonged sensor blockage, stop affected upstream conveyors, and alert the operator.
+
+## Key Features
+- **Sequential startup:** CV_3 starts first, followed by CV_2 and CV_1 with 800 ms delays.
+- **Jam detection:** TON timers detect continuous photo-eye blockage for 5 seconds while the corresponding conveyor runs.
+- **Fault latching:** Individual jam flags retain the fault until reset.
+- **Upstream interlocking:** A downstream jam is intended to stop the affected conveyor and all upstream conveyors.
+- **Alarm indication:** A common alarm activates when any jam flag is set.
+- **Operator controls:** Start, Stop, Emergency Stop, and Reset inputs.
+
+## Tools
+- EDWartens Lab
+- Ladder Logic
+- PLC simulation
+- TON timers and digital I/O
+
+## Simulation Status
+The program compiled without errors, and basic conveyor startup and stop/restart behavior were observed in simulation. Jam detection, reset interlocks, and emergency-stop behavior still require complete validation.
+
+## Safety Note
+This is an educational simulation. A real machine emergency stop requires appropriately designed and validated safety hardware; ordinary PLC logic alone is not a safety-rated emergency-stop system.
+
+## Future Improvements
+- Complete all jam and reset functional tests.
+- Verify startup timing and downstream/upstream stop behavior.
+- Capture simulation evidence and document test results.
