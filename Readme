@@ -30,3 +30,5 @@ This is an educational simulation. A real machine emergency stop requires approp
 - Complete all jam and reset functional tests.
 - Verify startup timing and downstream/upstream stop behavior.
 - Capture simulation evidence and document test results.
+
+
